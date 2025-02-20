@@ -7,9 +7,11 @@ import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 interface Post {
   id: string;
   title: string;
-  author: string;
+  author_name: string;
   category: string;
-  date: string;
+  date: {
+    seconds: number;
+  };
   status: string;
 }
 
@@ -25,7 +27,7 @@ export default function Bloglist() {
       id: doc.id,
       ...doc.data(),
     })) as Post[];
-    console.log(blogPosts, "sss");
+
     setPosts(blogPosts);
     setLoading(false);
   };
@@ -64,7 +66,7 @@ export default function Bloglist() {
                 {posts.map((post) => (
                   <tr key={post.id} className="border-b">
                     <td className="p-2">{post.title}</td>
-                    <td className="p-2">{post.author}</td>
+                    <td className="p-2">{post.author_name}</td>
                     <td className="p-2">{post.category}</td>
                     <td className="p-2">
                       {new Date(post.date.seconds * 1000).toLocaleDateString()}
