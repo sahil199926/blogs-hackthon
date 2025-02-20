@@ -21,6 +21,16 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "tailwind.config.ts",
+    "src/app/components/common/Footer/index.tsx",
+    "src/app/components/common/Header/Navbar.tsx",
+    "src/app/components/common/Header/index.tsx",
+    "src/app/components/SynapseLandingPage/FaqSection.tsx"
+  ],
   "exclude": ["node_modules"]
 }
