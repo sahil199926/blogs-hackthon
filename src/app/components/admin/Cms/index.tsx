@@ -10,13 +10,10 @@ function Cms() {
   const [activeTab, setActiveTab] = useState("dashboard");
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen w-full">
       {/* Sidebar for larger screens */}
       <div className="hidden md:block md:w-1/4 bg-gray-800 text-white p-4">
-        <Sidebar 
-            activeTab='dashboard'
-            setActiveTab={setActiveTab}
-        />
+      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
 
       {/* Sidebar as a slide-in menu on mobile */}
@@ -35,7 +32,7 @@ function Cms() {
       )}
       
       {/* Bloglist taking remaining width */}
-      <div className="w-full md:w-2/3 p-4">
+      <div className="w-full md:w-2/3">
       {
         activeTab === "dashboard" ? (
           <Bloglist />) : (

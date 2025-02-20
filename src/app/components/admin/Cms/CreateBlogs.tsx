@@ -55,87 +55,89 @@ function CreateBlogs() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold mb-4">Create a New Blog</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Blog Title */}
-        <div>
-          <label className="block font-semibold">Blog Title</label>
-          <input
-            type="text"
-            name="title"
-            className="w-full border p-2 rounded"
-            value={formData.title}
-            onChange={handleInputChange}
-            required
-          />
+    <section className="min-h-screen w-full bg-gray-100 p-6">
+        <div className="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+          <h2 className="text-2xl font-bold mb-4">Create a New Blog</h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Blog Title */}
+            <div>
+              <label className="block font-semibold">Blog Title</label>
+              <input
+                type="text"
+                name="title"
+                className="w-full border p-2 rounded"
+                value={formData.title}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+    
+            {/* Slug */}
+            <div>
+              <label className="block font-semibold">Slug</label>
+              <input
+                type="text"
+                name="slug"
+                className="w-full border p-2 rounded"
+                value={formData.slug}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+    
+            {/* Banner Upload */}
+            <div>
+              <label className="block font-semibold">Banner Image</label>
+              <input type="file" className="w-full border p-2 rounded" onChange={handleFileChange} />
+            </div>
+    
+            {/* Author Name */}
+            <div>
+              <label className="block font-semibold">Author Name</label>
+              <input
+                type="text"
+                name="author"
+                className="w-full border p-2 rounded"
+                value={formData.author}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+    
+            {/* Category Dropdown */}
+            <div>
+              <label className="block font-semibold">Category</label>
+              <select
+                name="category"
+                className="w-full border p-2 rounded"
+                value={formData.category}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="" disabled>
+                  Select a category
+                </option>
+                {categoryOptions.map((category) => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+            </div>
+    
+            {/* Rich Text Editor */}
+            <div>
+              <label className="block font-semibold">Content</label>
+              <ReactQuill value={formData.content} onChange={handleEditorChange} className="bg-white" />
+            </div>
+    
+            {/* Submit Button */}
+            <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">
+              Publish Blog
+            </button>
+          </form>
         </div>
-
-        {/* Slug */}
-        <div>
-          <label className="block font-semibold">Slug</label>
-          <input
-            type="text"
-            name="slug"
-            className="w-full border p-2 rounded"
-            value={formData.slug}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-
-        {/* Banner Upload */}
-        <div>
-          <label className="block font-semibold">Banner Image</label>
-          <input type="file" className="w-full border p-2 rounded" onChange={handleFileChange} />
-        </div>
-
-        {/* Author Name */}
-        <div>
-          <label className="block font-semibold">Author Name</label>
-          <input
-            type="text"
-            name="author"
-            className="w-full border p-2 rounded"
-            value={formData.author}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-
-        {/* Category Dropdown */}
-        <div>
-          <label className="block font-semibold">Category</label>
-          <select
-            name="category"
-            className="w-full border p-2 rounded"
-            value={formData.category}
-            onChange={handleInputChange}
-            required
-          >
-            <option value="" disabled>
-              Select a category
-            </option>
-            {categoryOptions.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {/* Rich Text Editor */}
-        <div>
-          <label className="block font-semibold">Content</label>
-          <ReactQuill value={formData.content} onChange={handleEditorChange} className="bg-white" />
-        </div>
-
-        {/* Submit Button */}
-        <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">
-          Publish Blog
-        </button>
-      </form>
-    </div>
+    </section>
   );
 }
 
