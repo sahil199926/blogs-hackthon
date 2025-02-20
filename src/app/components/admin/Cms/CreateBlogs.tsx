@@ -74,7 +74,7 @@ function CreateBlogs() {
 
         const data = await response.json();
         if (data.success) {
-          setFormData((prev) => ({ ...prev, bannerURL: data.data.url }));
+          setFormData((prev) => ({ ...prev, bannerURL: data.data.url, date: new Date() }));
           alert("Image uploaded successfully!");
         } else {
           throw new Error("Failed to upload image to ImgBB");
