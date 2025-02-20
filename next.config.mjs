@@ -30,6 +30,12 @@ const nextConfig = {
         hostname: "www.gravatar.com",
         pathname: "**",
       },
+      //https://i.ibb.co/TDLJdcN2/
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+        pathname: "**",
+      },
     ],
   },
 };

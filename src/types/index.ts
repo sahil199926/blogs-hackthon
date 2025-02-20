@@ -52,7 +52,11 @@ export interface TeamPageProps {
 }
 
 export interface BlogPageProps {
-  data: Record<string, unknown>;
+  title: string;
+  bannerURL: string;
+  category: string[];
+  author: string;
+  content: string;
 }
 
 export interface ResourcesMobilePageProps {
@@ -1370,9 +1374,9 @@ export interface ITrendingindustries {
 
 export interface IPopularTrendingIndustries extends IIndustries {
   image: {
-    link : string;
-    title : string;
-    altText : string;
+    link: string;
+    title: string;
+    altText: string;
   };
   CTA: {
     link: string;

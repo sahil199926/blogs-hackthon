@@ -1,20 +1,37 @@
-"use client"
-import React from 'react'
-import RelatedBlogs from './RelatedBlogs'
-import RelatedReports from './RelatedReports'
-import { IRelatedBlogs, IRelatedReports, ISuggestion } from '@/types'
-import { Carousel, CarouselContent, CarouselItem } from "@/ulComponents/ui/carousel";
-import Suggestion from './Suggestion';
+"use client";
+import React from "react";
+// import RelatedBlogs from "./RelatedBlogs";
+// import RelatedReports from "./RelatedReports";
+// import { IRelatedBlogs, IRelatedReports, ISuggestion } from "@/types";
+// import {
+//   Carousel,
+//   CarouselContent,
+//   CarouselItem,
+// } from "@/ulComponents/ui/carousel";
+// import Suggestion from "./Suggestion";
 
-function MainContent({ content, relatedBlogs, relatedReports, suggestion }: { content: string, relatedBlogs: IRelatedBlogs, relatedReports: IRelatedReports, suggestion:ISuggestion }) {
+function MainContent({
+  content,
+  // relatedBlogs,
+  // relatedReports,
+  // suggestion,
+}: {
+  content: string;
+  // relatedBlogs: IRelatedBlogs;
+  // relatedReports: IRelatedReports;
+  // suggestion: ISuggestion;
+}) {
   return (
-    <div className="overflow-hidden relative flex justify-center  h-full z-20">
-      <section className='w-full max-w-8xl mx-auto'>
-        <div className="pt-6 px-4 pb-[10px] md:px-[88px] md:py-[48px] text-Neutrals-950">
-          <div className='md:flex justify-between'>
-            <div className='w-full max-w-[765px]' dangerouslySetInnerHTML={{ __html: content }} />
+    <div className="relative z-20 flex h-full justify-center overflow-hidden">
+      <section className="mx-auto w-full max-w-8xl">
+        <div className="px-4 pb-[10px] pt-6 text-Neutrals-950 md:px-[88px] md:py-[48px]">
+          <div className="justify-between md:flex">
+            <div
+              className="w-full max-w-[765px]"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
 
-            <div className='py-5 md:py-0 w-full md:w-[300px]'>
+            {/* <div className='py-5 md:py-0 w-full md:w-[300px]'>
               <div>
                 <h3 className='mb-5 md:mb-4 text-Display-Semibold-24 md:text-Display-Semibold-16'>{relatedBlogs.heading}</h3>
                 <div className='hidden md:flex flex-col'>
@@ -64,12 +81,12 @@ function MainContent({ content, relatedBlogs, relatedReports, suggestion }: { co
               <div>
                  <Suggestion suggestion={suggestion} />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
 
-export default MainContent
+export default MainContent;
